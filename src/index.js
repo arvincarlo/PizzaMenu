@@ -67,8 +67,8 @@ function Header() {
 }
 
 function Menu() {
-    const pizzas = [];
-    // const pizzas = pizzaData;
+    // const pizzas = [];
+    const pizzas = pizzaData;
     const numPizzas = pizzas.length;
 
     return (
@@ -92,7 +92,8 @@ function Menu() {
 
 function Pizza(props) {
     console.log(props);
-    
+    if (props.pizzaObj.soldOut) return <Header/>;
+
     return ( 
         <li className='pizza'>
             <div>
@@ -107,12 +108,16 @@ function Pizza(props) {
 
 function Footer() {
     const hour = new Date().getHours();
-    const openHour = 11;
+    const openHour = 12;
     const closeHour = 22;
     const isOpen = hour >= openHour && hour < closeHour;
     console.log(isOpen);
     
-
+    if (!isOpen) {
+        return (
+            <p>test!!!!</p>
+        );
+    }
     // if (hour >= openHour && hour < closeHour) {
     //     alert('We are currently open.');
     // } else {
