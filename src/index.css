@@ -178,6 +178,131 @@ body {
   background-color: #e9bb24;
 }
 
+
+button {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #FF0072;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #FF0072;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #c69802;
+  z-index: -1;
+}
+
+button:hover, button:focus {
+  color: white;
+}
+
+button:hover:before, button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  font-size: 16px;
+  width: 5.5em;
+  height: 5.5em;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(45deg);
+  height: 100%;
+  width: 4px;
+  background: #212020;
+  left: 50%;
+  top: 50%;
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 0.2em;
+  bottom: 0.18em;
+  width: 1em;
+  height: 1em;
+  background-color: orange;
+  border-radius: 15%;
+  animation: rollingRock 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+}
+
+@keyframes rollingRock {
+  0% {
+    transform: translate(0, -1em) rotate(-45deg)
+  }
+
+  5% {
+    transform: translate(0, -1em) rotate(-50deg)
+  }
+
+  20% {
+    transform: translate(1em, -2em) rotate(47deg)
+  }
+
+  25% {
+    transform: translate(1em, -2em) rotate(45deg)
+  }
+
+  30% {
+    transform: translate(1em, -2em) rotate(40deg)
+  }
+
+  45% {
+    transform: translate(2em, -3em) rotate(137deg)
+  }
+
+  50% {
+    transform: translate(2em, -3em) rotate(135deg)
+  }
+
+  55% {
+    transform: translate(2em, -3em) rotate(130deg)
+  }
+
+  70% {
+    transform: translate(3em, -4em) rotate(217deg)
+  }
+
+  75% {
+    transform: translate(3em, -4em) rotate(220deg)
+  }
+
+  100% {
+    transform: translate(0, -1em) rotate(-225deg)
+  }
+}
+
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
