@@ -116,15 +116,16 @@ function Pizza({pizzaObj}) {
 function Footer(props) {
     console.log(props);
     const hour = new Date().getHours();
-    const openHour = 12;
+    const openHour = 9;
     const closeHour = 22;
     const isOpen = hour >= openHour && hour < closeHour;
     
-    if (!isOpen) {
-        return (
-            <p>test!!!!</p>
-        );
-    }
+    // if (!isOpen) {
+    //     return (
+    //         <p>test!!!!</p>
+    //     );
+    // }
+    
     // if (hour >= openHour && hour < closeHour) {
     //     alert('We are currently open.');
     // } else {
@@ -139,7 +140,7 @@ function Footer(props) {
             {isOpen ? ( 
                <Order openHour={openHour} closeHour={closeHour}/> 
             ) : (
-                <p>We're happy to welcome you between {openHour}:00 and {closeHour}:00. 👌</p>
+                <p>Sorry, We're happy to welcome you between {openHour}:00 and {closeHour}:00. 👌</p>
             )}
         </footer>
     );
